@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inline行內元素</title>
+    <style>
+        body{
+            background-image: linear-gradient(180deg, rgb(255, 222, 233) 0%, rgb(181, 255, 252) 100%);
+            background-repeat: no-repeat;
+            height: 100vh;
+            overflow: hidden;
+        }
+        p{
+            margin: 10px;
+            /* 消除p標籤default本身的margin樣式屬性-因為要展示(實際應用看需求)*/
+        }
+        .example{
+            display: inline;
+            border: 2px dashed yellowgreen;
+            background-color: rgba(30, 204, 210, 0.212);
+            /* 這邊擺在跟block旁邊是要讓你們看到margin、padding上下對於排版是沒有作用，但左右是有用的。 */
+            /* 這邊是特別給你看上下對於排版無用的效果 */
+            margin:5px;
+            padding: 5px;
+        }
+        .example-child{
+            border: 2px dashed coral;
+            /* 這邊擺在跟inline旁邊是要讓你們看到margin、padding上下對於排版是沒有作用，但左右是有用的 */
+            /* 這邊是特別給你看左又是有用的效果 */
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>白話文:inline的意思就是說，我是個喜歡在群體裡面的人，喜歡跟人靠得近近的，我的寬、高就跟我本人。</h1>
+
+        <p>你應該知道的: inline(行內元素)因為喜歡跟人靠的近近的沒有距離，
+            所以當要跟別人有距離(margin-外邊距、padding-內間距)、排版不會隨著我們設定而改變。
+            也因為寬高都照實，所以就算我說了也不算，我才不會騙人，童叟無欺。
+            <strong><em>但是，並非不能設定。可以用背景顏色來看</em></strong></strong>
+        </p>
+        
+        <section>
+            <p>範例如下:</p>
+    
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    
+            <div class="example">
+                我是AB的父層，我也是inline
+                <span class="example-child">A我是inline</span>
+                <strong><em>B我是inline</em></strong>
+                <!-- 可以看到當都是內連元素的時候他們會緊密相連 -->
+            </div>
+    
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </section>
+
+    </main>
+</body>
+</html>

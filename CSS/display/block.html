@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block</title>
+    <style>
+        body{
+            background-image: linear-gradient(135deg, rgb(255, 222, 233) 15%, rgb(181, 255, 252) 100%);
+            background-repeat: no-repeat;
+            height: 100vh;
+            overflow: hidden;
+        }
+        h1{
+            font-family: sans-serif;
+        }
+
+        /* 當你看到下面這樣的寫法，是因為我想讓他們都有共用的樣式屬性，可以想像面這樣寫.className,.className{樣式屬性}，可以減少不必要重複的代碼 */
+        .class-div,.class-header,.class-p,.class-footer,.class-section{
+            border:  2px dashed; /* 邊線 */
+            height: 50px; /* 記得給高度，不然就會以內容物的高度為準 */
+            margin: 5px; /* 外邊距 */
+            text-align: center; /* 文字中央對齊*/
+            line-height: 50px; /* line-height 通常也會拿來置中*/
+        }
+
+        .class-div{
+            border-color:  green;
+        }
+
+        .class-header{
+            border-color:  yellow;
+        }
+
+        .class-p{
+            border-color:  teal;
+        }
+
+        .class-footer{
+            border-color:  coral;
+        }
+        .class-section{
+            border-color:  springgreen;
+        }
+
+
+
+        .example{
+            display: inline-block; /* inline-block 可以設定自己的寬度跟高度，當沒有設定時寬高為其內容物的寬高 */
+            border:  2px dashed; 
+            margin: 5px; /* 外邊距 */
+            width: 500px;
+        }
+        .child-p{
+            margin: 5px;
+            border:  2px dashed sandybrown;
+            width: 200px;
+            /* 可以在這邊寫看看寬度是不是就像我說的他是個不讓座的社會和諧破壞者*/
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>白話文: block 的意思就是，別擋路都走開。所以他會把自己的左右都撐開。塞不下別人。就算旁邊有座位，也都不讓座的社會協和破壞者。</h1>
+        <p>你應該要知道的: block(區塊元素)的寬度佔據的位置，會跟父層一樣寬哦</p>
+        <section>
+            <p>範例如下:</p>
+            <div class="example">
+                <strong><em>我是child-p的爸爸</em></strong>、Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia repudiandae omnis explicabo, odit harum dolores quae ipsam? Natus harum repellat recusandae tempore! Officiis modi iste qui quidem, reiciendis nulla numquam!
+                <p class="child-p">
+                    <strong><em>我是child-p</em></strong>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <div class="class-div">
+        div是一個標準的區塊元素。<strong>一個區塊元素會讓其內容從新的一行開始顯示，
+        並盡可能的撐滿容器。</strong>>其他常用的區塊元素包括 p 、 form 以及一些 HTML5
+         新出現的元素，例如：header 、 footer 、 section 等等。
+    </div>
+
+    <header class="class-header">我是Header標籤，我是塊元素</header>
+
+    <p class="class-p">我是p標籤，我是塊元素</p>
+
+    <footer class="class-footer">我是footer標籤，我是塊元素</footer>
+
+    <section class="class-section">我是section標籤，我是塊元素</section>
+
+</body>
+</html>
