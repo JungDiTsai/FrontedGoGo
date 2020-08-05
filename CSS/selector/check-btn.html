@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.btn-block{
+			display: inline-block;
+			width: 40px;
+			height: 20px;
+			background-color: #ccc;
+			vertical-align: middle;
+			border-radius: 100px;
+			box-shadow: 0px 0px 0px 1px #999, 2px 2px 2px #aaa inset;
+		}
+		.btn{
+			display: block;
+			width: 20px;
+			height: 20px;
+			background-color: #fff;
+			box-shadow: 0px 0px 0px 1px #faa,
+						2px 2px 2px #aaa;
+			border-radius: 100px;
+			position: relative;
+		}
+		.cbox:checked + .btn-block{
+			background-color: #faa;
+		}
+		.cbox:checked + .btn-block .btn{
+			left: 20px;
+		}
+		.cbox{
+			position: absolute;
+			z-index: 1;
+			opacity: 0;
+		}
+	</style>
+</head>
+<body>
+
+
+
+	<label>
+		<input type="checkbox" name="" id="" class="cbox">
+		<span class="btn-block">
+			<span class="btn"></span>
+		</span>
+		<span class="txt">Amos</span>
+	</label>
+
+
+	
+</body>
+</html>

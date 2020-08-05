@@ -67,29 +67,32 @@
             border-top: #f74b48 10px solid;
         }
         .line-wrap{
-            
+            text-align: center;
         }
-        .lines{
+        .lines-box{
             text-align: center;
             font-weight: 600;
             font-size: 1.5em;
             position: relative;
+            display: inline-block;
         }
-        .lines::before{
+        .lines-box::before{
             content: "";
             position: absolute;
-            width: 50px;
-            height: 1px;
-            background-color: #f74b48;
+            width: 25px;
+            height: 2px;
+            background-color: #35E7FF;
+            left: -10px;
+            top: -5px;
         }
-        .lines::after{
+        .lines-box::after{
             content: "";
             position: absolute;
-            width: 1px;
+            width: 2px;
             height: 25px;
-            background-color: #f74b48;
-            top: 0;
-            left: 0;
+            background-color: #ED2F6B;
+            top: -10px;
+            left: -5px;
         }
     </style>
 </head>
@@ -116,7 +119,7 @@
     <div>
         範例三.
         <div class="line-wrap">
-            <div class="lines">
+            <div class="lines-box">
               裝飾的線
             </div>
         </div>
