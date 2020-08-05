@@ -15,7 +15,7 @@
             margin: 10px;
             /* 消除p標籤default本身的margin樣式屬性-因為要展示(實際應用看需求)*/
         }
-        .example{
+        .example,.example2{
             display: inline;
             border: 2px dashed yellowgreen;
             background-color: rgba(30, 204, 210, 0.212);
@@ -24,28 +24,52 @@
             margin:5px;
             padding: 5px;
         }
-        .example-child{
+        .example-child,.example2-child1,.example2-child2{
             border: 2px dashed coral;
             /* 這邊擺在跟inline旁邊是要讓你們看到margin、padding上下對於排版是沒有作用，但左右是有用的 */
             /* 這邊是特別給你看左又是有用的效果 */
             margin: 10px;
             padding: 10px;
         }
+        .example2{
+            display: block;
+            text-align: center;
+            /* 作用於當前元素的子元素，且子元素需是inline的 */
+        }
+        .example2-child1{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            vertical-align: middle;
+            /* 作用於當前元素。 */
+        }
+        .example2-child2{
+            display: inline;
+            vertical-align: middle;
+            /* 作用於當前元素。 */
+        }
     </style>
 </head>
 <body>
     <main>
         <h1>白話文:inline的意思就是說，我是個喜歡在群體裡面的人，喜歡跟人靠得近近的，我的寬、高就跟我本人。</h1>
-
-        <p>你應該知道的: inline(行內元素)因為喜歡跟人靠的近近的沒有距離，
-            所以當要跟別人有距離(margin-外邊距、padding-內間距)、排版不會隨著我們設定而改變。
-            也因為寬高都照實，所以就算我說了也不算，我才不會騙人，童叟無欺。
-            <strong><em>但是，並非不能設定。可以用背景顏色來看</em></strong></strong>
-        </p>
         
+        <p>你應該知道的: 
+            <ol>
+                <li>
+                    inline(行內元素)因為喜歡跟人靠的近近的沒有距離，
+                    所以當要跟別人有距離(margin-外邊距、padding-內間距)、排版不會隨著我們設定而改變。
+                    也因為寬高都照實，所以就算我說了也不算，我才不會騙人，童叟無欺。
+                    <strong><em>但是，並非不能設定。可以用背景顏色來看</em></strong>
+                </li>
+                <li>inline元素的對齊問題 - text-align屬性<strong><em>(作用於當前元素的子元素，且子元素需是inline的)</em></strong>、vertical-align屬性<strong><em>(作用於當前元素。)</em></strong></li>
+            </ol>
+            
+        </p>
+
         <section>
             <p>範例如下:</p>
-    
+            <p>範例一.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
     
             <div class="example">
@@ -57,7 +81,14 @@
     
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </section>
-
+        <section>
+            <p>範例二.</p>
+            <div class="example2">
+                我是AB的父層我block
+                <span class="example2-child1">A我是inline-block</span>
+                <span class="example2-child2">B我是inline</span>
+            </div>
+        </section>
     </main>
 </body>
 </html>

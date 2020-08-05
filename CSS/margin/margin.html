@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin</title>
+    <style>
+        body{
+            background-image: linear-gradient(135deg, rgb(255, 222, 233) 15%, rgb(181, 255, 252) 100%);
+            background-repeat: no-repeat;
+        }
+        .tips{
+            font-size: 1.2em;
+            font-weight: 600;
+            color: red;
+        }
+        .example{
+            border:  2px dashed yellow;
+            /*在這邊你可以試試看，如何將裡面的inline、inline-blok水平置中
+            請在它們的父層爸爸給一個屬性(也就我我寫的這一層)text-align:center;
+            */
+        }
+        .child1,.child2,.child3,.child4{
+            border: 2px dashed;
+            width: 300px;
+            margin: 10px auto;
+        }
+        .child1{
+            border-color: orange; 
+            width: 300px;
+        }
+        .child2{
+            width: initial; /* 因為我們在上面第22行有給寬值，所以我們在這邊回到初始值。*/
+            border-color: yellowgreen; 
+        }
+        .child3{
+            border-color: skyblue; 
+            display: inline;
+        }
+        .child4{
+            border-color: brown; 
+            display: inline-block;
+        }
+        .section1{
+            border:  2px dashed palevioletred;
+        }
+        .section2{
+            outline:  2px dashed palevioletred;
+        }
+        .p1,.p2{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+
+        <h1>白話文:margin，你、妳、你、你，請和我保持距離。</h1>
+        
+        <h3>你應該知道的: </h3>
+        <ol>
+            <li>
+                <p>
+                    <span class="tips">想避免區塊元素從左到右撐滿容器，要記得設定區塊元素的 width 屬性。
+                    然後你可以設定左右外邊距（margin-left 與 margin-right）為 aoto 來使其
+                    水平居中。</span>元素在顯示的時候，只會顯示到你所指定的寬度，然後剩餘的寬度平均
+                    的散落在左右兩邊的邊距上。
+                </p>
+            </li>
+            <li>
+                <p>
+                    <span class="tips">得先了解Margin collapse。</span>不然在用block的垂直排版前，會出現一堆迷之間距。
+                    簡單來說就是 <span class="tips">block 元素們之間(兩個皆是 block)</span>的 margin-top 和margin-bottom 赤裸裸相遇沒有 border 或 padding 隔開時
+                    ，會產生重疊合成單一的 margin-top 和margin-bottom (其值會選擇最大值)。Margin-collapse 水平方向無此情況。
+                </p>
+            </li>
+            <li>
+                <p><span class="tips">會發生 Margin collapse 的基本情況如下</span></p>
+                <ol>
+                    <li>相鄰的兄弟姊妹元素</li>
+                    <li>父層和自己的第一個/最後一個子元素</li>
+                    <li>解決方法可以使用 padding 解決，不要使用 margin</li>
+                </ol>
+            </li>
+        </ol>
+        <article>
+            <h3>Margin範例如下:</h2>
+            <h4>你應該知道的第一點</h3>
+            <section class="section1">
+                <div class="example">
+                    我是爸爸
+                    <div class="child1">
+                        我們來看margin:auto在block置中的效果。
+                    </div>
+                    <div class="child2">
+                        我們來看margin在block置中的效果，但是我沒有寫寬度，會發現沒有用為什麼?因為你沒寫他就是父層爸爸的寬呀，沒得推了。
+                    </div>
+                    <div class="child3">
+                        我們來看margin在inline置中的效果，會發現沒有用。詳情請看display的inline哦。
+                    </div>
+                    <div class="child4">
+                        我們來看margin在inline-block置中的效果，也是沒辦法達到你要的左右置中的效果哦，動腦想想為什麼，都跟box model有關。
+                    </div>
+                </div>
+            </section>
+
+            <h3>Margin collapse範例如下:</h2>
+            <p>這邊要打開Devtool，並選取第一段落的那個元素</p>
+            <!-- 這邊你可以看到我們應該是要緊鄰相依靠在一起，但為什麼span和section有距離 -->
+            <!-- 因為相遇沒有阻礙，就合而為一了。 -->
+            <span>你應該知道的第二點</span>
+            <section class="section2">
+                <p class="p1">第一段落</p>
+                <p class="p2">第二段落</p>
+                <!-- 這邊為什麼他們倆個的距離是10px而不是20px -->
+                <!-- 也是因為相遇沒有阻礙，就合而為一了。 -->
+            </section>
+        </article> 
+    </main>
+</body>
+</html>

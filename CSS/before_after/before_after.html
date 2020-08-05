@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>before & after</title>
+    <style>
+        .outBlock {
+            position: relative;
+            height: 100px;
+            width: 300px;
+            margin: auto;
+        }
+
+        .textBlock {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            font-size: 50px;
+            font-weight: bold;
+            color: red;
+            filter: drop-shadow(2px 2px 2px #333);
+        }
+
+        .textBlock::before {
+            content: "HELLO";
+            position: absolute;
+            top: -20px;
+            left: 5px;
+            height: 30px;
+            overflow: hidden;
+            color: green;
+        }
+
+        .textBlock::after {
+            content: "HELLO";
+            position: absolute;
+            top: -40px;
+            left: 10px;
+            height: 30px;
+            overflow: hidden;
+            color: yellow;
+        }
+
+        .textbox{
+            font-size: 1.5em;
+            width: 15em;
+            padding: 0.5em;
+            margin: 10px auto;
+            background: #f74b48;
+            color: white;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+            border-radius: 5px;
+            position: relative;
+            text-align: center;
+        }
+        .textbox::after{
+            content: "";
+            position: absolute;
+            left: 10px;
+            bottom: -20px;
+            border:  10px solid transparent;
+            /* border:  10px solid yellowgreen; */
+            border-top: #f74b48 10px solid;
+        }
+        .line-wrap{
+            
+        }
+        .lines{
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.5em;
+            position: relative;
+        }
+        .lines::before{
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 1px;
+            background-color: #f74b48;
+        }
+        .lines::after{
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 25px;
+            background-color: #f74b48;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>白話文: 看我的影分身之術，偽元素（ Pseudo-element ），偽元素則是基於原有的 DOM ，創建另一個可設定不同 CSS 的 DOM 屬性。</h1>
+    <p>你應該要知道的: 偽元素的應用通常都會使用在為文字或圖片加上一些不同的裝飾。記得要加上content屬性哦!!!</p>
+
+    <p>範例如下:</p>
+
+    <div>
+        範例一.
+        <div class="outBlock">
+            <div class="textBlock">
+            HELLO
+            </div>
+        </div>
+    </div>
+    <div>
+        範例二.
+        <div class="textbox">
+          對話框的小三角形
+        </div>
+    </div>
+    <div>
+        範例三.
+        <div class="line-wrap">
+            <div class="lines">
+              裝飾的線
+            </div>
+        </div>
+    </div>
+</body>
+</html>

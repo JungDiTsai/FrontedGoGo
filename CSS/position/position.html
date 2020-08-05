@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position相對定位與絕對定位</title>
+    <style>
+        body{
+            background-image: linear-gradient(135deg, rgb(255, 222, 233) 15%, rgb(181, 255, 252) 100%);
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            margin: 0;
+        }
+        table{
+            border-collapse: collapse;
+            margin: auto;
+        }
+        th,td{
+            border: 1px solid black;
+        }
+        .example{
+            position: relative;
+            border: 2px dashed yellow;
+            left: 50px;
+            top: 50px;
+            /* relative，雖然也能移動，但原本的頁面圖層還是會保留該元素所佔有的空間。把left跟top註解你們就會知道了 */
+            width: 400px; 
+            height: 120px;
+        }
+        .example .child1{
+            position: absolute;
+            border: 2px dashed yellowgreen; 
+            color: saddlebrown;
+            right: 0;
+            bottom: 0;
+        }
+        .example p{
+            color: blue;
+            font-size: 12px;
+        }
+        .example1{
+            border: 2px dashed yellowgreen;
+            position: fixed;
+            height: 34px;
+            line-height: 34px;
+            font-size: 24px;
+            font-weight: 600;
+            color: tomato;
+            top: calc(50% - 17px);
+            right: 0; 
+        }
+        .notes{
+            text-align: center;
+            border: 2px dashed plum;            
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>白話文: Position，為了設計出更複雜的版面配置，我們需要探討關於 position 這個屬性。很重要!</h1>
+        <p>你應該要知道的: block(區塊元素)的寬度佔據的位置，會跟父層一樣寬哦</p>
+        <section>
+            <p>範例如下:</p>
+            <div class="example">
+                我是爸爸relative
+                <p>把left跟top註解掉看看</p>
+                <p>relative 時，雖然也能移動，但原本的頁面圖層還是會保留該元素所佔有的空間。</p>
+                <div class="child1">我是position</div>
+            </div>
+            <div class="example1">
+                我是fixed
+            </div>
+            <!--
+                當我們對元素的 position 屬性，指定了 absolute、 relative 或 fixed 後，
+                這個元素就可以移動了。我們可以用 top, left, right, bottom 這四種屬性來
+                指定元素要呈現的位置。 
+            -->
+        </section>
+    </main>
+    <h3 class="notes">整理表格在這裡</h3>
+    <table>
+        <tbody>
+            <tr>
+                <th>
+                    <strong>position</strong> 參數<br> / 參數說明
+                </th>
+                <th>absolute</th>
+                <th>relative</th>
+                <th>static(預設值)</th>
+                <th>fixed</th>
+            </tr>
+            <tr>
+                <th>中文意義</th>
+                <td>絕對位置</td>
+                <td>相對位置</td>
+                <td>靜態位置</td>
+                <td>固定位置</td>
+            </tr>
+            <tr>
+                <th>畫面位置參考基準</th>
+                <td>父元素內容區邊界</td>
+                <td>原本應該在的位置</td>
+                <td>不變</td>
+                <td>不指定：原本應該在的位置<br>指定：螢幕視窗最大可視範圍邊界 (或框架邊界)</td>
+            </tr>
+            <tr>
+                <th>移動參考基準</th>
+                <td>文件</td>
+                <td>文件</td>
+                <td>文件</td>
+                <td>螢幕視窗最大可視範圍</td>
+            </tr>
+            <tr>
+                <th>可改變顯示位置</th>
+                <td>是</td>
+                <td>是</td>
+                <td>否</td>
+                <td>是</td>
+            </tr>
+            <tr>
+                <th>可調整大小</th>
+                <td>是</td>
+                <td>display 為 block ：是<br>display 為 inline ：否 </td>
+                <td>display 為 block ：是<br>display 為 inline ：否</td>
+                <td>是</td>
+            </tr>
+            <tr>
+                <th>從顯示流程中去除</th>
+                <td>是</td>
+                <td>否</td>
+                <td>否</td>
+                <td>是</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
