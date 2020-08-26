@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selector</title>
+    <style>
+        body{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        section{
+            width: 100%;
+            flex: 1 0 30%;
+            border: 1px solid yellowgreen;
+            padding: 15px;
+            margin: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 4px 2px #ccc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <section class="demo1">
+        <p>1. *</p>
+        <p>星號標誌會指向頁面上所有的元素。</p>
+    </section>
+    <section class="demo2">
+        <p>2. #</p>
+        <p>id選擇器</p>
+        <p>id選擇器的規則非常的嚴格，而且因為他是唯一的，所以不允許被再次使用。</p>
+    </section>
+    <section class="demo3">
+        <p>3. .X</p>
+        <p>class選擇器</p>
+        <p> id和class的不同點就是class可以同時標記多個元素。</p>
+    </section>
+    <section class="demo4">
+        <p>4. X Y</p>
+        <p>子對象選擇器</p>
+    </section>
+    <section class="demo5">
+        <p>5. X</p>
+        <p>（類）選擇器</p>
+    </section>
+    <section class="demo6">
+        <p>6. X:visited and X:link</p>
+        <p>:link偽類來選擇所有的錨點標籤並且你還沒有點擊過。</p>
+        <p>:visited偽類，已經被點擊過</p>
+    </section>
+    <section class="demo7">
+        <p>7. X + Y</p>
+        <p>相鄰兄弟選擇器。 它僅僅會選擇剛好在左邊元素之前的元素。(只會選擇剛剛好在前一個選擇器之前的第一個元素)</p>
+    </section>
+    <section class="demo8">
+        <p>8. X > Y</p>
+        <p>X Y和X > Y的不同是後者僅僅選擇它的直接的子對象</p>
+    </section>
+    <section class="demo9">
+        <p>9. X ~ Y</p>
+        <p>兄弟組合器和相鄰兄弟組合器X + Y非常相似，但是，更加不嚴格(選擇所有的Y元素，只要他們是在X之後的)</p>
+    </section>
+    <section class="demo10">
+        <p>10. X[title]</p>
+        <p>屬性選擇器，這會僅僅選擇所有包含有title屬性的的錨點對象</p>
+    </section>
+    <section class="demo11">
+        <p>11. X[href="foo"]</p>
+        <p>包含鏈接foo的錨點對象添加樣式</p>
+    </section>
+    <section class="demo12">
+        <p>12. X[href*="google"]</p>
+        <p>星號指定的值必須出現在屬性裡面的某個地方。 google.com、net.google.com、甚至是googlesplus.com。</p>
+    </section>
+    <section class="demo13">
+        <p>13. X[href^="http"]</p>
+        <p>如果你希望指向所有的包含href且開頭是http的錨點對象</p>
+    </section>
+    <section class="demo14">
+        <p>14. X[href$=".jpg"]</p>
+        <p>表達式符號$，來提到尾部的字符串。</p>
+    </section>
+    <section class="demo15">
+        <p>15. X[data-*="foo"]</p>
+        <p>添加自己的data-屬性</p>
+    </section>
+    <section class="demo16">
+        <p>16. X[foo~="bar"]</p>
+        <p>個標籤的標誌（~）可以讓我們分別指向那些有空格分開的多個屬性值。</p>
+    </section>
+    <section class="demo17">
+        <p>17. X:checked</p>
+        <p>偽類，它僅僅會指向一個用戶端被選中的元素 - 像是單選框或者多選框。</p>
+    </section>
+    <section class="demo18">
+        <p>18. X:after</p>
+    </section>
+    <section class="demo19">
+        <p>19. X:hover</p>
+    </section>
+    <section class="demo20">
+        <p>20. X:not(selector)</p>
+        <p>negation偽類特別的有用。 讓我們說，我想選擇所有的div，除了一個有id是container的</p>
+    </section>
+    <section class="demo21">
+        <p>21. X::pseudoElement</p>
+        <p>可以使用偽元素（設計為::）來為元素的分段添加樣式，比如第一行、或者第一個文字等</p>
+        <p>一個偽元素是由兩個冒號構成的::</p>
+        <p>p::first-line</p>
+        <p>p::first-letter</p>
+    </section>
+    <section class="demo22">
+        <p>22. X:nth-child(n)</p>
+        <p>nth-child接受整數的參數</p>
+        <p>:nth-child(4n)來選擇所有的第四個列表中的物體。</p>
+    </section>
+    <section class="demo23">
+        <p>23. X:nth-last-child(n)</p>
+        <p>選擇倒數</p>
+    </section>
+    <section class="demo24">
+        <p>24. X:nth-of-type(n)</p>
+        <p>與其說選擇child，不如說你會需要根據type的元素來選擇。</p>
+    </section>
+    <section class="demo25">
+        <p>25. X:nth-last-of-type(n)</p>
+        <p>nth-last-of-type來從尾部開始選擇列表</p>
+    </section>
+    <section class="demo26">
+        <p>26. X:first-child</p>
+        <p>ex. ul li:first-child 這個結構性的偽類允許我們僅指向父元素的第一個子對象。你會經常的使用到這個來去除第一個和最後一個樣式</p>
+    </section>
+    <section class="demo27">
+        <p>27. X:last-child</p>
+        <p>ex. ul > li:last-child 與first-child相反，last-child會指向父對像下的最後一個子元素</p>
+    </section>
+    <section class="demo28">
+        <p>28. X:only-child</p>
+        <p>它允許你指向那些父對象僅有的一個子對像元素。</p>
+    </section>
+    <section class="demo29">
+        <p>29. X:only-of-type</p>
+        <p>這個結構性的偽類可以使用到很明智的地方。 它會指向那些在其父對象容器中沒有兄弟姐妹的元素。 舉個例子，我們來選中所有的ul，這些ul都只有一個列表元素。</p>
+    </section>
+    <section class="demo30">
+        <p>30. X:first-of-type</p>
+        <p>first-of-type偽類允許你選擇第一個相同類的兄弟姐妹。</p>
+    </section>
+</body>
+</html>

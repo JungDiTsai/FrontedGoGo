@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawer</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            /* outline: 1px solid green; */
+        }
+        nav{
+            padding: 5px;
+        }
+        .hamber-wrap{
+            width: 44px;
+            height: 44px;
+            display: inline-block;
+            position: relative;
+        }
+        .hamber{
+            width: 80%;
+            height: 1px;
+            margin-top: calc(50% - 1px);
+            background-color: red;
+            display: inline-block;
+        }
+        .hamber:before,.hamber::after{
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 1px;
+            left: 0;
+            right: 0;
+            background-color: black;
+        }
+        .hamber::before{
+            top: 10px;
+        }
+        .hamber::after{
+            bottom: 10px;
+        }
+        #sidebar{
+            max-height: 0;
+            height: auto;
+            overflow: hidden;
+            transition: 0.3s ease;
+        }
+        #menu{
+            display: none;
+        }
+        #menu:checked + #sidebar{
+            max-height: 100vh;
+            transition: 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <label for="menu" class="hamber-wrap">
+            <div class="hamber"></div>
+        </label>
+        <input id="menu" type="checkbox">
+        <ul id="sidebar">
+            <li>首頁</li>
+            <li>商品</li>
+            <li>會員中心</li>
+            <li>訂單查詢</li>
+            <li>購物車</li>
+            <li>登入</li>
+        </ul>
+    </nav>
+    
+</body>
+</html>
