@@ -24,6 +24,18 @@
             margin: 0;
             padding: 0;
         }
+        .demo1 p{
+            color:red;
+        }
+        a[href="foo"]{
+            color: red;
+        }
+        p:after{
+            content: attr(data-title);
+            display: block;
+            width:44px;
+            height: 44px;
+        }
     </style>
 </head>
 <body>
@@ -53,6 +65,7 @@
         <p>6. X:visited and X:link</p>
         <p>:link偽類來選擇所有的錨點標籤並且你還沒有點擊過。</p>
         <p>:visited偽類，已經被點擊過</p>
+        <a href="#">here</a>
     </section>
     <section class="demo7">
         <p>7. X + Y</p>
@@ -68,10 +81,13 @@
     </section>
     <section class="demo10">
         <p>10. X[title]</p>
+        <a href=""></a>
+        <input type="file">
         <p>屬性選擇器，這會僅僅選擇所有包含有title屬性的的錨點對象</p>
-    </section>
-    <section class="demo11">
+    </section>1
+    <section cl1ass="demo11">
         <p>11. X[href="foo"]</p>
+        <a href="foo">asd</a>
         <p>包含鏈接foo的錨點對象添加樣式</p>
     </section>
     <section class="demo12">
@@ -89,6 +105,7 @@
     <section class="demo15">
         <p>15. X[data-*="foo"]</p>
         <p>添加自己的data-屬性</p>
+        <p data-title="我是孩子王"></p>
     </section>
     <section class="demo16">
         <p>16. X[foo~="bar"]</p>
@@ -97,6 +114,7 @@
     <section class="demo17">
         <p>17. X:checked</p>
         <p>偽類，它僅僅會指向一個用戶端被選中的元素 - 像是單選框或者多選框。</p>
+        <!-- 補上單選框 -->
     </section>
     <section class="demo18">
         <p>18. X:after</p>

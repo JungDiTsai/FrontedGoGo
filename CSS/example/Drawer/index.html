@@ -14,7 +14,7 @@
         nav{
             padding: 5px;
         }
-        .hamber-wrap{
+        #hamber-wrap{
             width: 44px;
             height: 44px;
             display: inline-block;
@@ -49,7 +49,7 @@
             transition: 0.3s ease;
         }
         #menu{
-            display: none;
+            /* display: none; */
         }
         #menu:checked + #sidebar{
             max-height: 100vh;
@@ -59,7 +59,7 @@
 </head>
 <body>
     <nav>
-        <label for="menu" class="hamber-wrap">
+        <label for="menu" id="hamber-wrap">
             <div class="hamber"></div>
         </label>
         <input id="menu" type="checkbox">
@@ -72,6 +72,12 @@
             <li>登入</li>
         </ul>
     </nav>
-    
+    <script>
+        window.onload = function () {
+            let ham = document.getElementById('hamber-wrap');
+            
+            ham.addEventListener('click',function(){console.log('hello')});
+        };
+    </script>
 </body>
 </html>
