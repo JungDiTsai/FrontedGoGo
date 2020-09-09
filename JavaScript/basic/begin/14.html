@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #slogan{
+            color: brown;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="slogan" style="color:blue" >福利熊 熊福利</h1>
+    <button id="scaleUp">放大</button>
+    <script>
+        var scaleUp = document.getElementById('scaleUp');
+        var slogan = document.getElementById('slogan');
+        console.log(slogan.style.color)
+        scaleUp.addEventListener('click', toggleSlogan);
+        function toggleSlogan () {
+            if (slogan.style.fontSize !=="200px"){
+                slogan.style.fontSize = '200px'
+            } else {
+                slogan.style.fontSize = '24px'
+            }
+        }
+        // click
+        // scroll
+        // mousehover
+        // keyup
+        // keydown
+        // keypress
+        // moveevent
+    </script>
+</body>
+</html>
